@@ -82,7 +82,7 @@
     .service h3 { margin:20px 0 8px; font-size:1.08rem; }
     .service p { color:var(--muted); font-size:.91rem; margin:0; }
     .portfolio { background:linear-gradient(180deg,transparent,rgba(255,255,255,.025),transparent); }
-    .portfolio-grid { display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:15px; }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start; }
     .work-card { min-height:260px; border:1px solid var(--line); border-radius:18px; overflow:hidden; position:relative; background:#17131f; }
     .work-card.large { min-height:330px; }
     .work-art { position:absolute; inset:0; background:radial-gradient(circle at 70% 25%,rgba(194,156,255,.7),transparent 22%),linear-gradient(145deg,#49336a,#15131c 55%,#09090c); }
@@ -92,6 +92,13 @@
     .work-overlay small { color:#c6a7ff; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-size:.68rem; }
     .work-overlay strong { font-size:1.35rem; letter-spacing:-.04em; }
     .work-note { color:#9998a4; font-size:.82rem; margin-top:15px; }
+    .portfolio-video-card { grid-column:auto; max-width:none; width:100%; min-height:0; margin:0; background:linear-gradient(145deg,#15151c,#08080c); }
+    .portfolio-video { display:block; width:100%; aspect-ratio:1 / 1; object-fit:contain; background:#08080c; }
+    .portfolio-caption { padding:16px 18px 18px; }
+    .portfolio-caption small { display:block; color:#c6a7ff; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-size:.68rem; margin-bottom:4px; }
+    .portfolio-caption strong { font-size:1.05rem; letter-spacing:-.02em; }
+    .portfolio-video-card .work-overlay { pointer-events:none; }
+    .portfolio-video-card video { position:relative; z-index:1; }
     .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .step { border-top:1px solid rgba(155,92,255,.6); padding:22px 4px 0; }
     .step-num { color:#a77aff; font-size:.78rem; font-weight:900; letter-spacing:.16em; }
@@ -200,13 +207,24 @@
 </section>
 <section class="portfolio" id="portfolio">
 <div class="container">
-<div class="section-head"><div class="kicker" data-i18n="portfolioKicker">Selected work</div><h2 data-i18n="portfolioTitle">A preview of what<br/>we can create.</h2><p data-i18n="portfolioIntro">Replace these concept tiles with your own finished edits before publishing the website.</p></div>
+<div class="section-head"><div class="kicker" data-i18n="portfolioKicker">Selected work</div><h2>Gaming edits.<br/>Made to stand out.</h2><p>Watch a selection of my short-form gaming edits below.</p></div>
 <div class="portfolio-grid">
-<article class="work-card large"><div class="work-art"></div><div class="work-overlay"><small data-i18n="work1Label">01 / Short-form edit</small><strong data-i18n="work1Title">Fast-paced storytelling</strong></div></article>
-<article class="work-card"><div class="work-art"></div><div class="work-overlay"><small data-i18n="work2Label">02 / Creator content</small><strong data-i18n="work2Title">Clean &amp; engaging</strong></div></article>
-<article class="work-card"><div class="work-art"></div><div class="work-overlay"><small data-i18n="work3Label">03 / Visual identity</small><strong data-i18n="work3Title">Made to stand out</strong></div></article>
+<article class="work-card portfolio-video-card">
+<video class="portfolio-video" controls playsinline preload="metadata" aria-label="Brawl Stars short-form editing showcase">
+<source src="media/brawl-stars-showcase.mp4" type="video/mp4">
+Your browser does not support HTML video.
+</video>
+<div class="portfolio-caption"><small>01 / Brawl Stars</small><strong>Gaming highlight edit</strong></div>
+</article>
+<article class="work-card portfolio-video-card">
+<video class="portfolio-video" controls playsinline preload="metadata" aria-label="Second Brawl Stars short-form editing showcase">
+<source src="media/brawl-stars-showcase-2.mp4" type="video/mp4">
+Your browser does not support HTML video.
+</video>
+<div class="portfolio-caption"><small>02 / Brawl Stars</small><strong>Short-form gameplay edit</strong></div>
+</article>
 </div>
-<p class="work-note" data-i18n="portfolioNote">Portfolio preview only — these are design placeholders, not client projects or performance claims.</p>
+<p class="work-note">Two Brawl Stars editing samples · Select play to watch each clip.</p>
 </div>
 </section>
 <section id="process">
